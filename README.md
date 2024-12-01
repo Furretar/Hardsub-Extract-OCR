@@ -26,7 +26,10 @@ Discord: furretar
 
 ## Usage
 
-1. Put the videos you want to extract hardsubs from in the /PutVideosInHere/ folder. Then run the ExtractHardsubs.bat. You will need to check the RGBImages folder so you can tweak the crop settings. Having a closer crop will reduce noise in the final result and increase processing speed in the extraction and OCR steps. You also may need to close VideoSubFinder using Task Manager (ctrl+shift+esc) before running the .bat again:
+1.
+- Put the videos you want to extract hardsubs from in the /PutVideosInHere/ folder.
+- Run the ExtractHardsubs.bat.
+  - You will need to check the RGBImages folder so you can tweak the crop settings. Having a closer crop will reduce noise in the final result and increase processing speed in the extraction and OCR steps. You also may need to close VideoSubFinder using Task Manager (ctrl+shift+esc) before running the .bat again:
 <img src="https://github.com/user-attachments/assets/bb9097e9-fbe0-4a19-9f84-63fcc53346aa" alt="image" width="400"/> 
 
 This is where the RGBImages folder is:
