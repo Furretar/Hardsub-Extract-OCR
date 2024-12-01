@@ -20,6 +20,7 @@ Discord: furretar
    1. It's important that the folder name matches `Release_x64` exactly.
 ```bash
 /Hardsub-Extract-OCR-main/
+└── /BatchProcessor/
 └── /PutVideosInHere/
 └── /Release_x64/ <-- here
 ```
@@ -34,6 +35,7 @@ Discord: furretar
 This is where the RGBImages folder is:
 ```bash
 /Hardsub-Extract-OCR-main/
+└── /BatchProcessor/
 └── /PutVideosInHere/
    ├── /output/
        └──/VideoTitle/
