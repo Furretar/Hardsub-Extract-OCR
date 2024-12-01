@@ -1,6 +1,6 @@
 # Hardsub-Extract-OCR: Extract hardsubs and OCR with 99% accuracy 
 Uses [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/)
-and [Google Cloud Vision](https://cloud.google.com/vision) (and paddleocr?) to extract hard subs and OCR them to create an SRT file. Main purpose is for use with MPVacious for quick dictionary lookups and use with subs2srs. All code in the .bat and .py files was written by ChatGPT.
+and [Google Cloud Vision](https://cloud.google.com/vision) to extract hard subs and OCR them to create an SRT file. Main purpose is for use with MPVacious for quick dictionary lookups and use with subs2srs. All code in the .bat and .py files was written by ChatGPT.
 
 # Links
 <a href="https://nyaa.si/user/Furretar" target="_blank">
