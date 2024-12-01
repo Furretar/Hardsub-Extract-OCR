@@ -41,7 +41,7 @@ This is where the RGBImages folder is:
    └── VideoTitle.mp4
 └── /Release_x64/
 ```
-Example of too high -be value, crops too much off the bottom
+Example of too high `-be` value, crops too much off the bottom
 ![0_00_16_099__0_00_20_686_0019205760896008612800720](https://github.com/user-attachments/assets/3bb3b78b-d555-45a4-8a53-04f6a2485efa)
 
 This is how you can tweak the crop values in ExtractHardsubs.bat. You can edit the file by right clicking and selecting edit.
@@ -66,7 +66,11 @@ This OCR you will be using is called Google Cloud Vision, it's the same one used
 - Inside the Service Account, click Keys.
 - Click `ADD KEY`, Create new key, make sure JSON is selected, then click Create.
 - Drag this JSON file into the main directory
-
+- In your project, go to `APIs and Services`
+- `Enabled APIs and Services`
+- `+ Enable APIs and Services`
+- Search for `Cloud Vision`
+- Enable it
 2. 
 
 
@@ -74,4 +78,5 @@ This OCR you will be using is called Google Cloud Vision, it's the same one used
 
 
 If you'd rather use a locally hosted OCR rather than Google Cloud Vision, you should consider using [RapidVideOCR Desktop](https://github.com/SWHL/RapidVideOCRDesktop). It uses PaddleOCR, which has about 95% accuracy in my experience.
+You can also convert the TXTImages from the first step into a SUP file directly without OCRing using [Images to PGS SUP](https://github.com/dam-cav/img-to-pgs-sup)
 
