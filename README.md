@@ -47,14 +47,14 @@ Example of too high `-be` value, crops too much off the bottom
 This is how you can tweak the crop values in ExtractHardsubs.bat. You can edit the file by right clicking and selecting edit.
 <img src="https://github.com/user-attachments/assets/7d7e60f3-8c73-405a-8ba2-b1d052cfe5db" alt="image" width="800"/>
 <img src="https://github.com/user-attachments/assets/58e1203e-9f34-4875-a39f-a40d18f73c57" alt="image" width="1000"/>
-<img src="https://github.com/user-attachments/assets/34c62809-5861-464d-bbb1-fe4c329714d3" alt="image" width="1000"/>
+<img src="https://github.com/user-attachments/assets/a5ae0f30-82dc-4c2a-8489-4ed346068b8e" alt="image" width="1000"/>
 
 Once your crop values are tweaked, you can let the program run. It will leave you with the final images in TXTImages. They should look like this:
 ![0_00_16_099__0_00_20_686_1019205790896007012800720](https://github.com/user-attachments/assets/4fd173ed-2511-45a9-a98b-a96a3da4c99b)
 
 ## OCR
-This OCR you will be using is called Google Cloud Vision, it's the same one used in Google Lens. I say it's 99% accuracy, but I've never seen it make a mistake with high quality source images. It does pick up some noise though. At the time of writing, Google offers a $300 free trial for 3 months. That's enough to OCR over 100 episodes of anime in my experience.
-1.
+The OCR we will be using is called Google Cloud Vision, it's the same one used in Google Lens. I say it's 99% accuracy, but I've never seen it make a mistake with high quality source images. It does pick up some noise though. At the time of writing, Google offers a $300 free trial for 3 months. That's enough to OCR over 100 episodes of anime in my experience.
+
 - Make a [Google Cloud account](https://console.cloud.google.com/).
 - Create a project.
   - You can just enter random text or "Other" for the details.
@@ -65,18 +65,25 @@ This OCR you will be using is called Google Cloud Vision, it's the same one used
 - Enter info.
 - Inside the Service Account, click Keys.
 - Click `ADD KEY`, Create new key, make sure JSON is selected, then click Create.
-- Drag this JSON file into the main directory
-- In your project, go to `APIs and Services`
-- `Enabled APIs and Services`
-- `+ Enable APIs and Services`
-- Search for `Cloud Vision`
-- Enable it
-2. 
+- Drag this JSON file into the main directory.
+- In your project, go to `APIs and Services`.
+- `Enabled APIs and Services`.
+- `+ Enable APIs and Services`.
+- Search for `Cloud Vision`.
+- Enable it.
 
+Now you can use the Batch Processor.
+- Run `01 InstallRequirements.bat`.
+- Run `02 BatchProcessor.exe`.
+- Select your folder with images.
+  - If you're processing multiple videos at once, this will be `output`, check the `Process Multiple Folders` checkbox.
+  - If you're processing a single video, this will be `TXTImages`.
+- Select the output folder, where the SRT files will be generated.
+- Select your JSON file, should be in the main directory. Ex. `example-473422-7e6ba2cacb95.json`.
 
 
 
 
 If you'd rather use a locally hosted OCR rather than Google Cloud Vision, you should consider using [RapidVideOCR Desktop](https://github.com/SWHL/RapidVideOCRDesktop). It uses PaddleOCR, which has about 95% accuracy in my experience.
-You can also convert the TXTImages from the first step into a SUP file directly without OCRing using [Images to PGS SUP](https://github.com/dam-cav/img-to-pgs-sup)
+You can also convert the TXTImages from the first step into a SUP file directly without OCR using [Images to PGS SUP](https://github.com/dam-cav/img-to-pgs-sup)
 
