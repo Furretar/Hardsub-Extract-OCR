@@ -2,17 +2,6 @@
 Uses [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/)
 and [Google Cloud Vision](https://cloud.google.com/vision) to extract hardsubs and OCR them to create an SRT file. Main purpose is for use with MPVacious for quick dictionary lookups and use with subs2srs. All code in the .bat and .py files was written by ChatGPT.
 
-# Links
-<a href="https://nyaa.si/user/Furretar" target="_blank">
-  <img src="https://github.com/user-attachments/assets/bf0a6f97-e1d4-417e-b887-a323cb2f3390" height="50px" title="Nyaa">
-</a>
-<a href="https://www.youtube.com/@furretar6484" target="_blank">
-  <img src="https://github.com/gauravghongde/social-icons/blob/master/SVG/Color/Youtube.svg" height="50px" title="YouTube">
-</a>
-
-
-Discord: furretar
-
 # Installation
 1. Download [this repository](https://github.com/Furretar/Hardsub-Extract-OCR/archive/refs/heads/main.zip) and extract anywhere.
 2. Make sure you have [python](https://www.python.org/ftp/python/3.13.0/python-3.13.0-amd64.exe) installed (used version 3.13.0 here)
@@ -83,8 +72,17 @@ Now you can use the Batch Processor.
 - Select the output folder, where the SRT files will be generated.
 - Select your JSON file, should be in the main directory. Ex. `example-473422-7e6ba2cacb95.json`.
 
+# Links
+<a href="https://nyaa.si/user/Furretar" target="_blank">
+  <img src="https://github.com/user-attachments/assets/bf0a6f97-e1d4-417e-b887-a323cb2f3390" height="50px" title="Nyaa">
+</a>
+<a href="https://www.youtube.com/@furretar6484" target="_blank">
+  <img src="https://github.com/gauravghongde/social-icons/blob/master/SVG/Color/Youtube.svg" height="50px" title="YouTube">
+</a>
 
+Discord: furretar
 
+# Note
 
 If you'd rather use a locally hosted OCR rather than Google Cloud Vision, you should consider using [RapidVideOCR Desktop](https://github.com/SWHL/RapidVideOCRDesktop). It uses PaddleOCR, which has about 95% accuracy in my experience.
 You can also convert the TXTImages from the first step into a SUP file directly without OCR using [Images to PGS SUP](https://github.com/dam-cav/img-to-pgs-sup)
