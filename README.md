@@ -2,7 +2,7 @@
 Uses [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/)
 and [Google Cloud Vision](https://cloud.google.com/vision) (and paddleocr?) to extract hard subs and OCR them to create an SRT file. Main purpose is for use with MPVacious for quick dictionary lookups and use with subs2srs. All code in the .bat and .py files was written by ChatGPT.
 
-## Links
+# Links
 <a href="https://nyaa.si/user/Furretar" target="_blank">
   <img src="https://github.com/user-attachments/assets/bf0a6f97-e1d4-417e-b887-a323cb2f3390" height="50px" title="Nyaa">
 </a>
@@ -13,7 +13,7 @@ and [Google Cloud Vision](https://cloud.google.com/vision) (and paddleocr?) to e
 
 Discord: furretar
 
-## Installation
+# Installation
 1. Download [this repository](https://github.com/Furretar/Hardsub-Extract-OCR/archive/refs/heads/main.zip) and extract anywhere.
 2. Make sure you have [python](https://www.python.org/ftp/python/3.13.0/python-3.13.0-amd64.exe) installed (used version 3.13.0 here)
 3. Install [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/files/latest/download) and extract Release_x64 to the main directory.
@@ -24,9 +24,8 @@ Discord: furretar
 └── /Release_x64/ <-- here
 ```
 
-## Usage
-
-1.
+# Usage
+## Extraction
 - Put the videos you want to extract hardsubs from in the /PutVideosInHere/ folder.
 - Run the ExtractHardsubs.bat.
   - You will need to check the RGBImages folder so you can tweak the crop settings. Having a closer crop will reduce noise in the final result and increase processing speed in the extraction and OCR steps. You also may need to close VideoSubFinder using Task Manager (ctrl+shift+esc) before running the .bat again:
@@ -48,7 +47,28 @@ Example of too high -be value, crops too much off the bottom
 This is how you can tweak the crop values in ExtractHardsubs.bat. You can edit the file by right clicking and selecting edit.
 <img src="https://github.com/user-attachments/assets/7d7e60f3-8c73-405a-8ba2-b1d052cfe5db" alt="image" width="800"/>
 <img src="https://github.com/user-attachments/assets/58e1203e-9f34-4875-a39f-a40d18f73c57" alt="image" width="1000"/>
-
 <img src="https://github.com/user-attachments/assets/34c62809-5861-464d-bbb1-fe4c329714d3" alt="image" width="1000"/>
 
+Once your crop values are tweaked, you can let the program run. It will leave you with the final images in TXTImages. They should look like this:
+![0_00_16_099__0_00_20_686_1019205790896007012800720](https://github.com/user-attachments/assets/4fd173ed-2511-45a9-a98b-a96a3da4c99b)
+
+## OCR
+This OCR you will be using is called Google Cloud Vision, it's the same one used in Google Lens. I say it's 99% accuracy, but I've never seen it make a mistake with high quality source images. It does pick up some noise though. At the time of writing, Google offers a $300 free trial for 3 months. That's enough to OCR over 100 episodes of anime in my experience.
+- Make a [Google Cloud account](https://console.cloud.google.com/).
+- Create a project.
+  - You can just enter random text or "Other" for the details.
+- Enable billing, enter payment information.
+  - It will not charge you unless you go over the trial amount.
+- In `APIs & Services` in your project, go to `Credentials`.
+- Click `+ Create Credentials`, then `Service Account`.
+- Enter info.
+- Inside the Service Account, click Keys.
+- Click `ADD KEY`, Create new key, make sure JSON is selected, then click Create.
+- Drag this JSON file into the main directory
+
+
+
+
+
+If you'd rather use a locally hosted OCR rather than Google Cloud Vision you should consider using [RapidVideOCR Desktop](https://github.com/SWHL/RapidVideOCRDesktop). It uses PaddleOCR, which has about 95% accuracy in my experience.
 
