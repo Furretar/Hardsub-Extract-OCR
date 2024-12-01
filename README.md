@@ -54,6 +54,7 @@ Once your crop values are tweaked, you can let the program run. It will leave yo
 
 ## OCR
 This OCR you will be using is called Google Cloud Vision, it's the same one used in Google Lens. I say it's 99% accuracy, but I've never seen it make a mistake with high quality source images. It does pick up some noise though. At the time of writing, Google offers a $300 free trial for 3 months. That's enough to OCR over 100 episodes of anime in my experience.
+1.
 - Make a [Google Cloud account](https://console.cloud.google.com/).
 - Create a project.
   - You can just enter random text or "Other" for the details.
@@ -66,9 +67,11 @@ This OCR you will be using is called Google Cloud Vision, it's the same one used
 - Click `ADD KEY`, Create new key, make sure JSON is selected, then click Create.
 - Drag this JSON file into the main directory
 
+2. 
 
 
 
 
-If you'd rather use a locally hosted OCR rather than Google Cloud Vision you should consider using [RapidVideOCR Desktop](https://github.com/SWHL/RapidVideOCRDesktop). It uses PaddleOCR, which has about 95% accuracy in my experience.
+
+If you'd rather use a locally hosted OCR rather than Google Cloud Vision, you should consider using [RapidVideOCR Desktop](https://github.com/SWHL/RapidVideOCRDesktop). It uses PaddleOCR, which has about 95% accuracy in my experience.
 
