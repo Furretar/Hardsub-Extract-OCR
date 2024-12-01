@@ -2,7 +2,7 @@
 Uses [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/)
 and [Google Cloud Vision](https://cloud.google.com/vision) to extract hardsubs and OCR them to create an SRT file. Main purpose is for use with MPVacious for quick dictionary lookups and use with subs2srs. All code in the .bat and .py files was written by ChatGPT.
 
-# Installation
+# Installation (Only for Windows)
 1. Download [this repository](https://github.com/Furretar/Hardsub-Extract-OCR/archive/refs/heads/main.zip) and extract anywhere.
 2. Make sure you have [python](https://www.python.org/ftp/python/3.13.0/python-3.13.0-amd64.exe) installed (used version 3.13.0 here)
 3. Install [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/files/latest/download) and extract Release_x64 to the main directory.
@@ -14,7 +14,7 @@ and [Google Cloud Vision](https://cloud.google.com/vision) to extract hardsubs a
 └── /Release_x64/ <-- here
 ```
 
-# Usage (Only for Windows)
+# Usage
 ## Extraction
 - Put the videos you want to extract hardsubs from in the /PutVideosInHere/ folder.
 - Run the ExtractHardsubs.bat.
