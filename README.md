@@ -3,8 +3,13 @@ Uses [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/)
 and [Google Cloud Vision](https://cloud.google.com/vision) (and paddleocr?) to extract hard subs and OCR them to create an SRT file. Main purpose is for use with MPVacious for quick dictionary lookups and use with subs2srs. All code in the .bat and .py files was written by ChatGPT.
 
 ## Links
-<a href="https://nyaa.si/user/Furretar"><img src="https://github.com/user-attachments/assets/bf0a6f97-e1d4-417e-b887-a323cb2f3390" height="50px" title="Nyaa"></a>
-<a href="https://www.youtube.com/@furretar6484"><img src="https://github.com/gauravghongde/social-icons/blob/master/SVG/Color/Youtube.svg" height="50px" title="YouTube"></a>
+<a href="https://nyaa.si/user/Furretar" target="_blank">
+  <img src="https://github.com/user-attachments/assets/bf0a6f97-e1d4-417e-b887-a323cb2f3390" height="50px" title="Nyaa">
+</a>
+<a href="https://www.youtube.com/@furretar6484" target="_blank">
+  <img src="https://github.com/gauravghongde/social-icons/blob/master/SVG/Color/Youtube.svg" height="50px" title="YouTube">
+</a>
+
 
 Discord: furretar
 
