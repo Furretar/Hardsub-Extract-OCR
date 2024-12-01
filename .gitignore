@@ -2,3 +2,4 @@ Release_x64/
 PutVideosInHere/*.mp4
 PutVideosInHere/*.mkv
 PutVideosInHere/output
+*.json
