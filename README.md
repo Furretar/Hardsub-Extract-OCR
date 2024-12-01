@@ -9,7 +9,7 @@ and [Google Cloud Vision](https://cloud.google.com/vision) to extract hard subs 
 Discord: furretar
 
 ## Installation
-1. Download this repository and extract
+1. Download [this repository](https://github.com/Furretar/Hardsub-Extract-OCR/archive/refs/heads/main.zip) and extract 
 2. Install [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/) and extract Release_x64 to the main directory
 ```bash
 /Hardsub-Extract-OCR/
