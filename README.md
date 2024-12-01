@@ -15,7 +15,8 @@ Discord: furretar
 
 ## Installation
 1. Download [this repository](https://github.com/Furretar/Hardsub-Extract-OCR/archive/refs/heads/main.zip) and extract anywhere.
-2. Install [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/files/latest/download) and extract Release_x64 to the main directory.
+2. Make sure you have [python](https://www.python.org/ftp/python/3.13.0/python-3.13.0-amd64.exe) installed (used version 3.13.0 here)
+3. Install [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/files/latest/download) and extract Release_x64 to the main directory.
    1. It's important that the folder name matches `Release_x64` exactly.
 ```bash
 /Hardsub-Extract-OCR-main/
@@ -28,6 +29,27 @@ Discord: furretar
 ```
 
 ## Usage
-The first step involves using the supplied batch (.bat) file to extract the hardsubs as images from the desired videos.
-1. 
+
+1. Put the videos you want to extract hardsubs from in the /PutVideosInHere/ folder. Then run the ExtractHardsubs.bat. You will need to check the RGBImages folder so you can tweak the crop settings. Having a closer crop will reduce noise in the final result and increase processing speed in the extraction and OCR steps.
+
+This is where the RGBImages folder is
+```bash
+/Hardsub-Extract-OCR-main/
+└── /PutVideosInHere/
+   ├── /output/
+       └──/VideoTitle/
+          └──RGBImages
+   └── VideoTitle.mp4
+└── /Release_x64/
+```
+Example of too high -be value, crops too much off the bottom
+![0_00_16_099__0_00_20_686_0019205760896008612800720](https://github.com/user-attachments/assets/3bb3b78b-d555-45a4-8a53-04f6a2485efa)
+
+
+This is how you can tweak the crop values in ExtractHardsubs.bat. You can edit the file by right clicking and selecting edit.
+<img src="https://github.com/user-attachments/assets/7d7e60f3-8c73-405a-8ba2-b1d052cfe5db" alt="image" width="800"/>
+<img src="https://github.com/user-attachments/assets/58e1203e-9f34-4875-a39f-a40d18f73c57" alt="image" width="1000"/>
+
+<img src="https://github.com/user-attachments/assets/34c62809-5861-464d-bbb1-fe4c329714d3" alt="image" width="1000"/>
+
 
