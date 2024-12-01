@@ -72,6 +72,15 @@ Now you can use the Batch Processor.
 - Select the output folder, where the SRT files will be generated.
 - Select your JSON file, should be in the main directory. Ex. `example-473422-7e6ba2cacb95.json`.
 
+Once you have your subtitle files, you may want to use subtitle edit to merge lines with the same text. For example, when a scene changes in a show with the same subtitle line on screen, it gets counted as two lines, which can cause problems when using subs2srs.
+- To do this, open [subtitle edit](https://github.com/SubtitleEdit/subtitleedit/releases).
+- Click on `Tools`
+- `Batch Convert`
+- Drag in files
+- `Merge lines with same text`
+- `Overwrite files`
+- `Convert`
+
 # Links
 <a href="https://nyaa.si/user/Furretar" target="_blank">
   <img src="https://github.com/user-attachments/assets/bf0a6f97-e1d4-417e-b887-a323cb2f3390" height="50px" title="Nyaa">
