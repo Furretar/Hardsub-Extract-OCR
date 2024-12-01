@@ -14,7 +14,7 @@ and [Google Cloud Vision](https://cloud.google.com/vision) to extract hardsubs a
 └── /Release_x64/ <-- here
 ```
 
-# Usage
+# Usage (Only for Windows)
 ## Extraction
 - Put the videos you want to extract hardsubs from in the /PutVideosInHere/ folder.
 - Run the ExtractHardsubs.bat.
