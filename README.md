@@ -9,10 +9,11 @@ and [Google Cloud Vision](https://cloud.google.com/vision) to extract hard subs 
 Discord: furretar
 
 ## Installation
-1. Download [this repository](https://github.com/Furretar/Hardsub-Extract-OCR/archive/refs/heads/main.zip) and extract 
-2. Install [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/) and extract Release_x64 to the main directory
+1. Download [this repository](https://github.com/Furretar/Hardsub-Extract-OCR/archive/refs/heads/main.zip) and extract anywhere.
+2. Install [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/files/latest/download) and extract Release_x64 to the main directory.
+   1. It's important that the folder name matches `Release_x64` exactly.
 ```bash
-/Hardsub-Extract-OCR/
+/Hardsub-Extract-OCR-main/
 └── /Release_x64/
    ├── 
    └── 
@@ -20,4 +21,7 @@ Discord: furretar
    ├── 
    └── 
 ```
+
+## Usage
+The first step involves using the supplied batch (.bat) file to extract the hardsubs as images from the desired videos.
 
