@@ -4,7 +4,6 @@ from tkinter import filedialog, messagebox
 from google.cloud import vision
 import threading
 
-# Utility functions
 def parse_filename(filename):
     try:
         base_name = filename.rsplit('.', 1)[0]
@@ -30,9 +29,18 @@ def format_timestamp(timestamp):
     except Exception as e:
         raise ValueError(f"Error formatting timestamp {timestamp}: {e}")
 
+def get_unique_filename(file_path):
+    base, ext = os.path.splitext(file_path)
+    counter = 1
+    while os.path.exists(file_path):
+        file_path = f"{base}_{counter}{ext}"
+        counter += 1
+    return file_path
+
 def generate_srt_for_folder(image_folder, output_srt, client, logs, update_log_callback=None):
     srt_lines = []
     counter = 1
+    output_srt = get_unique_filename(output_srt)
     for file in sorted(os.listdir(image_folder)):
         if file.endswith(".jpeg"):
             try:
@@ -93,7 +101,6 @@ def process_images(image_dir, output_folder, json_path, recursive, update_log_ca
         generate_srt_for_folder(image_dir, output_srt, client, logs, update_log_callback)
     return logs
 
-# GUI helper functions
 def select_folder(entry, title="Select Folder"):
     folder = filedialog.askdirectory(title=title)
     if folder:
@@ -148,7 +155,6 @@ def run_program(folder_entry, output_folder_entry, json_entry, recursive_var, lo
 
     threading.Thread(target=process_thread, daemon=True).start()
 
-# Main GUI
 def main():
     root = tk.Tk()
     root.title("Image to SRT Converter")
