@@ -4,8 +4,8 @@ setlocal enabledelayedexpansion
 REM Set crop values
 set CROP_LEFT=0.15
 set CROP_RIGHT=0.85
-set CROP_TOP=0.20
-set CROP_BOTTOM=0.05
+set CROP_TOP=0.12
+set CROP_BOTTOM=0.02
 
 REM Set the path to the VideoSubFinder executable
 set VIDEOSUBFINDER_PATH="..\Release_x64\VideoSubFinderWXW.exe"
