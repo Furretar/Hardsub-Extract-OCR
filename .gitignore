@@ -5,3 +5,5 @@ PutVideosInHere/output
 *.json
 PutVideosInHere/*.srt
 vids
+temp
+PutVideosInHere/desktop.ini
