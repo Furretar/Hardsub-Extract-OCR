@@ -42,7 +42,7 @@ def generate_srt_for_folder(image_folder, output_srt, client, logs, update_log_c
     counter = 1
     output_srt = get_unique_filename(output_srt)
     for file in sorted(os.listdir(image_folder)):
-        if file.endswith(".jpeg"):
+        if file.endswith((".png", ".jpeg")):
             try:
                 start_ts, end_ts = parse_filename(file)
                 start_time = format_timestamp(start_ts)
