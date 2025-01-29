@@ -7,3 +7,5 @@ PutVideosInHere/*.srt
 vids
 temp
 PutVideosInHere/desktop.ini
+SUPtoPNG/*/
+SUPtoPNG/*.sup
