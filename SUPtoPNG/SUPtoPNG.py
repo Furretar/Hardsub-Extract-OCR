@@ -3,6 +3,9 @@ import shutil
 import subprocess
 import xml.etree.ElementTree as ET
 
+# Set the target frame rate here
+TARGET_FPS = 1000
+
 def extract_pngs_and_rename():
     # Get current directory (where the .sup files are)
     sup_folder = os.getcwd()
@@ -21,11 +24,12 @@ def extract_pngs_and_rename():
             output_subfolder = os.path.join(output_folder, folder_name, 'TXTImages')
             os.makedirs(output_subfolder, exist_ok=True)
             
-            # Run BDSup2Sub command to generate the XML file
+            # Run BDSup2Sub command to generate the XML file with the target frame rate
             xml_file_path = os.path.join(output_subfolder, folder_name + '.xml')
             command = [
                 'java', '-jar', 'BDSup2Sub.jar',
-                sup_file_path, '-o', xml_file_path
+                sup_file_path, '-o', xml_file_path, 
+                '-T', str(TARGET_FPS)  # Use the target frame rate variable
             ]
             subprocess.run(command)
 
@@ -41,11 +45,11 @@ def extract_pngs_and_rename():
                     in_time = event.get('InTC')  # Start time (InTC)
                     out_time = event.get('OutTC')  # End time (OutTC)
                     
-                    # Format the times to remove colons and keep the timestamp as required
+                    # Format the times to remove colons for filename
                     in_time_formatted = in_time.replace(':', '_')
                     out_time_formatted = out_time.replace(':', '_')
 
-                    # Create the new PNG filename with double underscore separating start and end times
+                    # Create the new PNG filename
                     new_png_filename = f"{in_time_formatted}__{out_time_formatted}_{png_filename}"
                     
                     # Check the correct path where the PNG file is located
@@ -56,7 +60,8 @@ def extract_pngs_and_rename():
                     if os.path.exists(png_source_path):
                         png_dest_path = os.path.join(output_subfolder, new_png_filename)
                         shutil.copy(png_source_path, png_dest_path)
-                        print(f"Copied and renamed: {png_filename} to {new_png_filename}")
+                        os.remove(png_source_path)  # Delete the original PNG
+                        print(f"Copied, renamed, and deleted: {png_filename} to {new_png_filename}")
                     else:
                         print(f"PNG file not found: {png_source_path}")
 
