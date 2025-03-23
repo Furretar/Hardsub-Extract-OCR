@@ -81,6 +81,9 @@ Once you have your subtitle files, you may want to use subtitle edit to merge li
 - `Overwrite files`
 - `Convert`
 
+## SUP to PNG
+- SUP files must not have special/chinese characters in the file name
+  
 # Links
 <a href="https://nyaa.si/user/Furretar" target="_blank">
   <img src="https://github.com/user-attachments/assets/bf0a6f97-e1d4-417e-b887-a323cb2f3390" height="50px" title="Nyaa">
