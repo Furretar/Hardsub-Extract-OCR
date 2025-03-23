@@ -1,11 +1,11 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM Set crop values, default (for Muse) L 0.15, R 0.85, T 0.18, B 0.01
+REM Set crop values, default (for Muse) L 0.15, R 0.85, T 0.19, B 0.02
 set CROP_LEFT=0.15
 set CROP_RIGHT=0.85
-set CROP_TOP=0.13
-set CROP_BOTTOM=0.04
+set CROP_TOP=0.20
+set CROP_BOTTOM=0.05
 
 REM Set the path to the VideoSubFinder executable
 set VIDEOSUBFINDER_PATH="..\Release_x64\VideoSubFinderWXW.exe"
