@@ -1,6 +1,6 @@
 # Hardsub-Extract-OCR: Extract hardsubs and OCR with 99% accuracy 
 Uses [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/)
-and [Google Cloud Vision](https://cloud.google.com/vision) to extract hardsubs and OCR them to create an SRT file. Main purpose is for use with MPVacious for quick dictionary lookups and use with subs2srs. All code in the .bat and .py files was written by ChatGPT. I used pyinstaller to make the python script an exe, source code is in BatchProcessor.py. Archive of files at https://github.com/Furretar/Mandarin-Subtitles-Archive/tree/main.
+and [Google Cloud Vision](https://cloud.google.com/vision) to extract hardsubs and OCR them to create an SRT file. Main purpose is for use with MPVacious for quick dictionary lookups and use with subs2srs. All code in the .bat and .py files was written by ChatGPT. I used pyinstaller to make the python script an exe, source code is in BatchProcessor.py.
 
 # Installation (Only for Windows)
 1. Download [this repository](https://github.com/Furretar/Hardsub-Extract-OCR/archive/refs/heads/main.zip) and extract anywhere.
