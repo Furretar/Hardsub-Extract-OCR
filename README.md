@@ -44,7 +44,7 @@ Once your crop values are tweaked, you can let the program run. It will leave yo
 ![0_00_16_099__0_00_20_686_1019205790896007012800720](https://github.com/user-attachments/assets/4fd173ed-2511-45a9-a98b-a96a3da4c99b)
 
 ## OCR
-The OCR we will be using is called Google Cloud Vision, it's the same one used in Google Lens. I say it's 99% accuracy, but I've never seen it make a mistake with high quality source images. It does pick up some noise though. At the time of writing, Google offers a $300 free trial for 3 months. That's enough to OCR over 100 episodes of anime in my experience.
+The OCR we will be using is called Google Cloud Vision, it's the same one used in Google Lens. I said was 99% accuracy, but I've never seen it make a mistake with high quality source images. It does pick up some noise though. At the time of writing, Google offers a $300 free trial for 3 months. That's enough to OCR over 100 episodes of anime.
 
 - Make a [Google Cloud account](https://console.cloud.google.com/).
 - Create a project.
@@ -81,6 +81,9 @@ Once you have your subtitle files, you may want to use subtitle edit to merge li
 - `Overwrite files`
 - `Convert`
 
+## SUP to PNG
+- SUP files must not have special/chinese characters in the file name
+  
 # Links
 <a href="https://nyaa.si/user/Furretar" target="_blank">
   <img src="https://github.com/user-attachments/assets/bf0a6f97-e1d4-417e-b887-a323cb2f3390" height="50px" title="Nyaa">
