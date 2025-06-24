@@ -44,7 +44,7 @@ Once your crop values are tweaked, you can let the program run. It will leave yo
 ![0_00_16_099__0_00_20_686_1019205790896007012800720](https://github.com/user-attachments/assets/4fd173ed-2511-45a9-a98b-a96a3da4c99b)
 
 ## OCR
-The OCR we will be using is called Google Cloud Vision, it's the same one used in Google Lens. I said it was 99% accuracy, but I've never seen it make a mistake with high quality source images. It does pick up some noise though. At the time of writing, Google offers a $300 free trial for 3 months. That's enough to OCR over 300 episodes of anime.
+The OCR we will be using is called Google Cloud Vision, it's the same one used in Google Lens. In my experience it makes less than 1 mistake per episode, or 600 sentence. It does pick up some noise though. At the time of writing, Google offers a $300 free trial for 3 months. That's enough to OCR over 300 episodes of anime.
 
 - Make a [Google Cloud account](https://console.cloud.google.com/).
 - Create a project.
