@@ -83,6 +83,10 @@ Once you have your subtitle files, you may want to use subtitle edit to merge li
 
 ## SUP to PNG
 - SUP files must not have special/chinese characters in the file name
+- originally from: https://github.com/mjuhasz/BDSup2Sub
+
+## SUB to SUP
+- originally from: https://www.videohelp.com/software/BDSup2Sub
   
 # Links
 <a href="https://nyaa.si/user/Furretar" target="_blank">
