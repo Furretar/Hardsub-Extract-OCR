@@ -10,4 +10,5 @@ PutVideosInHere/desktop.ini
 *.srt
 *.sub
 *.idx
-*.log
+*.png
+*.xml
