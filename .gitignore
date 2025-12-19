@@ -6,8 +6,8 @@ PutVideosInHere/output
 vids
 temp
 PutVideosInHere/desktop.ini
-SUPtoPNG/*/
 *.sup
 *.srt
 *.sub
 *.idx
+*.log
