@@ -27,6 +27,14 @@ def get_unique_filename(path):
 
 log_lock = threading.Lock()
 
+def write_log(widget, text):
+    at_bottom = widget.yview()[1] == 1.0
+    widget.config(state=tk.NORMAL)
+    widget.insert(tk.END, text)
+    if at_bottom:
+        widget.yview(tk.END)
+    widget.config(state=tk.DISABLED)
+
 def append_log(log_file, text, cb=None):
     with log_lock:
         with open(log_file, "a", encoding="utf-8") as f:
@@ -130,15 +138,20 @@ def run_program(folder_e, out_e, json_e, rec_v, rgb_v, log):
     jsonp = json_e.get()
 
     run_button.config(state=tk.DISABLED)
+    log.config(state=tk.NORMAL)
     log.delete(1.0, tk.END)
+    log.config(state=tk.DISABLED)
 
     def thread():
         try:
-            process_images(folder, out, jsonp, rec_v.get(), rgb_v.get(),
-                lambda t: log.insert(tk.END, t))
+            process_images(
+                folder, out, jsonp,
+                rec_v.get(), rgb_v.get(),
+                lambda t: write_log(log, t)
+            )
         except Exception as e:
             messagebox.showerror("Error", str(e))
-            log.insert(tk.END, str(e) + "\n")
+            write_log(log, str(e) + "\n")
         finally:
             run_button.config(state=tk.NORMAL)
 
@@ -190,7 +203,7 @@ def main():
     run_button.grid(row=5, column=1, pady=10)
 
     global log
-    log = tk.Text(root, width=100, height=15)
+    log = tk.Text(root, width=100, height=15, state=tk.DISABLED)
     log.grid(row=6, column=0, columnspan=3)
 
     root.mainloop()
