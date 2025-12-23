@@ -193,7 +193,7 @@ def main():
     rgb_v = tk.BooleanVar()
 
     tk.Checkbutton(root, text="Process Multiple Folders (TXTImages)", variable=rec_v).grid(row=3, column=1, sticky="w")
-    tk.Checkbutton(root, text="Use RGBImages (must exist next to TXTImages)", variable=rgb_v).grid(row=4, column=1, sticky="w")
+    tk.Checkbutton(root, text="Use RGBImages instead of TXTImages", variable=rgb_v).grid(row=4, column=1, sticky="w")
 
     global run_button
     run_button = tk.Button(
