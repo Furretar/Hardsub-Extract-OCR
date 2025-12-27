@@ -4,8 +4,8 @@ setlocal DISABLEDELAYEDEXPANSION
 REM Set crop values, default (for Muse) L 0.15, R 0.85, T 0.19, B 0.02, (Bilibili) L 0.10, R 0.90, T 0.20, B 0.03
 set "CROP_LEFT=0.10"
 set "CROP_RIGHT=0.90"
-set "CROP_TOP=0.20"
-set "CROP_BOTTOM=0.03"
+set "CROP_TOP=0.24"
+set "CROP_BOTTOM=0.04"
 
 REM Set the path to VideoSubFinder (no surrounding quotes in the value)
 set "VIDEOSUBFINDER_PATH=..\Release_x64\VideoSubFinderWXW.exe"
