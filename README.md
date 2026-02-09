@@ -62,6 +62,7 @@ The OCR we will be using is called Google Cloud Vision, it's the same one used i
 - `+ Enable APIs and Services`.
 - Search for `Cloud Vision`.
 - Enable it.
+- Make sure it says something like "300 credits remaining" on the project dashboard
 
 Now you can use the Batch Processor.
 - Run `01 InstallRequirements.bat`.
