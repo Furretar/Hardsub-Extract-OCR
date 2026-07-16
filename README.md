@@ -4,7 +4,7 @@ and [Google Cloud Vision](https://cloud.google.com/vision) to extract hardsubs a
 
 # Installation (Only for Windows)
 1. Download [this repository](https://github.com/Furretar/Hardsub-Extract-OCR/archive/refs/heads/main.zip) and extract anywhere.
-2. Make sure you have [python](https://www.python.org/ftp/python/3.13.0/python-3.13.0-amd64.exe) installed (used version 3.13.0 here)
+2. Make sure you have [python](https://www.python.org/ftp/python/3.11.0/python-3.11.0-amd64.exe) installed (used version 3.13.0 here)
 3. Install [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/files/latest/download) and extract Release_x64 to the main directory.
    1. It's important that the folder name matches `Release_x64` exactly.
 ```bash
