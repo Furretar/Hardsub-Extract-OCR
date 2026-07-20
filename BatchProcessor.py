@@ -141,6 +141,31 @@ def ocr_with_lens_scan(image_path, cli_path, log=None, max_retries=5):
                 text = raw.decode("utf-8", errors="replace")
                 print("Decoded using utf-8 (replace)")
 
+            # lens_scan sometimes exits 0 but writes an error message to stdout
+            # instead of OCR text (e.g. DNS/network failures inside the tool).
+            # Treat that as a failed attempt so it never ends up in the SRT.
+            error_indicators = (
+                "network error",
+                "error for:",
+                "getaddrinfo failed",
+                "connection error",
+                "connection refused",
+                "timed out",
+                "timeout error",
+                "traceback (most recent call last)",
+		"No OCR text found.",
+            )
+            lowered = text.lower()
+            if any(ind in lowered for ind in error_indicators):
+                print("Detected error text in OCR output (not real OCR result):")
+                print(text[:500])
+                if attempt < max_retries:
+                    print("Retrying...")
+                    time.sleep(5)
+                    continue
+                print("Giving up after repeated error-text responses.")
+                return ""
+
             print("Raw output:")
             print("=" * 60)
             print(text[:1000])
@@ -156,6 +181,17 @@ def ocr_with_lens_scan(image_path, cli_path, log=None, max_retries=5):
                     continue
 
                 if "failed to set console to utf-8" in stripped.lower():
+                    continue
+
+                low = stripped.lower()
+                if (
+                    "network error" in low
+                    or low.startswith("error for:")
+                    or "getaddrinfo failed" in low
+                    or "connection refused" in low
+                    or "connection error" in low
+                    or low.startswith("- (")
+                ):
                     continue
 
                 stripped = stripped.strip(":").strip()
