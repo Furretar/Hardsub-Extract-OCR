@@ -5,7 +5,7 @@ REM Set crop values, default (Bilibili) L 0.10, R 0.90, T 0.20, B 0.03
 set "CROP_LEFT=0.07"
 set "CROP_RIGHT=0.93"
 set "CROP_TOP=0.28"
-set "CROP_BOTTOM=0.06"
+set "CROP_BOTTOM=0.04"
 
 REM Set the path to VideoSubFinder
 set "VIDEOSUBFINDER_PATH=..\Release_x64\VideoSubFinderWXW.exe"
