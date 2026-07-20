@@ -144,19 +144,72 @@ def ocr_with_lens_scan(image_path, cli_path, log=None, max_retries=5):
             # lens_scan sometimes exits 0 but writes an error message to stdout
             # instead of OCR text (e.g. DNS/network failures inside the tool).
             # Treat that as a failed attempt so it never ends up in the SRT.
-            error_indicators = (
+            network_error_indicators = (
                 "network error",
-                "error for:",
                 "getaddrinfo failed",
-                "connection error",
                 "connection refused",
+                "connection error",
                 "timed out",
                 "timeout error",
+            )
+            other_error_indicators = (
+                "error for:",
                 "traceback (most recent call last)",
-		"No OCR text found.",
             )
             lowered = text.lower()
-            if any(ind in lowered for ind in error_indicators):
+
+            if any(ind in lowered for ind in network_error_indicators):
+                # Network problems are transient and shouldn't cause a line to
+                # be skipped - keep retrying this same image until it works.
+                network_attempt = 1
+                while True:
+                    print(f"Network error detected (retry {network_attempt}) for: {os.path.basename(image_path)}")
+                    print(text[:500])
+                    wait = min(5 * network_attempt, 60)
+                    print(f"Retrying in {wait}s...")
+                    time.sleep(wait)
+
+                    try:
+                        result = subprocess.run(
+                            [cli_path, image_path],
+                            capture_output=True,
+                            timeout=60,
+                            env=custom_env,
+                        )
+                    except subprocess.TimeoutExpired:
+                        network_attempt += 1
+                        continue
+                    except Exception as e:
+                        print(f"Exception during network retry: {e}")
+                        network_attempt += 1
+                        continue
+
+                    if result.returncode != 0 or not result.stdout:
+                        network_attempt += 1
+                        continue
+
+                    raw = result.stdout
+                    text = None
+                    for enc in encodings_to_try:
+                        try:
+                            decoded = raw.decode(enc)
+                            if "\ufffd" not in decoded:
+                                text = decoded
+                                break
+                        except Exception:
+                            pass
+                    if text is None:
+                        text = raw.decode("utf-8", errors="replace")
+
+                    lowered = text.lower()
+                    if any(ind in lowered for ind in network_error_indicators):
+                        network_attempt += 1
+                        continue
+
+                    print(f"Recovered from network error after {network_attempt} retries.")
+                    break
+
+            if any(ind in lowered for ind in other_error_indicators):
                 print("Detected error text in OCR output (not real OCR result):")
                 print(text[:500])
                 if attempt < max_retries:
