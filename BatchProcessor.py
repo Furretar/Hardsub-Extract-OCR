@@ -244,6 +244,7 @@ def ocr_with_lens_scan(image_path, cli_path, log=None, max_retries=5):
                     or "connection refused" in low
                     or "connection error" in low
                     or low.startswith("- (")
+                    or "no ocr text found" in low
                 ):
                     continue
 
