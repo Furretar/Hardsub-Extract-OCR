@@ -46,6 +46,12 @@ This is how you can tweak the crop values in ExtractHardsubs.bat. You can edit t
 Once your crop values are tweaked, you can let the program run. It will leave you with the final images in TXTImages. They should look like this:
 ![0_00_16_099__0_00_20_686_1019205790896007012800720](https://github.com/user-attachments/assets/4fd173ed-2511-45a9-a98b-a96a3da4c99b)
 
+
+You can then run `BatchProcessor.py` to create a subtitle file from the extracted screenshots. The script will create a subtitle file for every folder inside `output`. If you want to create only 1 file, uncheck `Process Multiple Folders` and set the file path to an `RGBImages` or `TXTImages` folder. If `Process Multiple Folders` is checked, the script will rescan the output folder every time a file finishes and start procesing any newly added folders as well, so you can run both scripts at the same time if the image extraction is faster than the OCR. You can also check `Use RGBImages instead of TXTImages` if the TXTImages generated are difficult to read. 
+
+<img width="843" height="545" alt="image" src="https://github.com/user-attachments/assets/1115e4fa-52d8-4f8b-80e9-1c831f886ce8" />
+
+
 ## OCR
 The OCR we will be using is called Google Cloud Vision, it's the same one used in Google Lens. In my experience it's the best OCR I've seen and makes very few mistakes. It does pick up some noise though. At the time of writing, it can be accessed for free using [this repository](https://github.com/bropines/chrome-lens-py). It will be automatically installed when you run `01 InstallRequirements.bat`.
 
