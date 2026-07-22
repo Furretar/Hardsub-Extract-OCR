@@ -67,6 +67,16 @@ def resolve_rgb_folder(txt_folder):
     return rgb
 
 
+def find_txt_folders(base_dir):
+    """Scan base_dir for TXTImages folders, sorted alphabetically by full path."""
+    return sorted(
+        os.path.join(r, d)
+        for r, ds, _ in os.walk(base_dir)
+        for d in ds
+        if d == "TXTImages"
+    )
+
+
 def ocr_with_lens_scan(image_path, cli_path, log=None, max_retries=5):
     encodings_to_try = ["utf-8", "gbk", "gb2312", "gb18030"]
 
@@ -346,16 +356,27 @@ def process_images(base_dir, output_dir, cli_path, recursive, use_rgb, cb):
     )
 
     if recursive:
-        txt_folders = [
-            os.path.join(r, d)
-            for r, ds, _ in os.walk(base_dir)
-            for d in ds
-            if d == "TXTImages"
-        ]
-        if not txt_folders:
-            raise RuntimeError("No TXTImages folders found")
+        processed = set()
+        found_any = False
 
-        for txt in txt_folders:
+        while True:
+            txt_folders = find_txt_folders(base_dir)
+            remaining = [t for t in txt_folders if t not in processed]
+
+            if not remaining:
+                break
+
+            found_any = True
+            txt = remaining[0]  # alphabetically first unprocessed folder
+            processed.add(txt)
+
+            append_log(
+                log_file,
+                f"Rescan found {len(remaining)} unprocessed folder(s). "
+                f"Processing next: {txt}",
+                cb,
+            )
+
             img_folder = resolve_rgb_folder(txt) if use_rgb else txt
             out_name = os.path.basename(os.path.dirname(txt)) + "_output.srt"
             generate_srt_for_folder(
@@ -365,6 +386,9 @@ def process_images(base_dir, output_dir, cli_path, recursive, use_rgb, cb):
                 log_file,
                 cb,
             )
+
+        if not found_any:
+            raise RuntimeError("No TXTImages folders found")
     else:
         img_folder = resolve_rgb_folder(base_dir) if use_rgb else base_dir
         generate_srt_for_folder(
