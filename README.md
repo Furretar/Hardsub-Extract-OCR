@@ -1,3 +1,5 @@
+**English** | [日本語](README.ja.md)
+
 # Hardsub-Extract-OCR: Extract hardsubs and OCR with 99% accuracy 
 Uses [VideoSubFinder](https://sourceforge.net/projects/videosubfinder/)
 and [Google Cloud Vision](https://cloud.google.com/vision) through [Chrome Lens Py](https://github.com/bropines/chrome-lens-py) to extract hardsubs and OCR them to create an SRT file. Main purpose is for use with MPVacious for quick dictionary lookups and use with subs2srs. All code in the .bat and .py files was written by ChatGPT. Archive of files at https://github.com/Furretar/Mandarin-Subtitles-Archive.
